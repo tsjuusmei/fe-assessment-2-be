@@ -3,6 +3,14 @@ const express = require('express');
 
 const app = express();
 
+
+var usersRouter = require('./users');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/users', usersRouter);
+
 const users = [
     {
         id: "5e6a2a4f05bc310f94b75ba8", 
