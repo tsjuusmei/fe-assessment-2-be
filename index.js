@@ -54,7 +54,7 @@ app.get('/users', (req, res) => {
     res.json(users)
 })
 
-app.get('/currentUser', (req, res) => {
+app.get('/userID', (req, res) => {
     res.json(userID)
 })
 
