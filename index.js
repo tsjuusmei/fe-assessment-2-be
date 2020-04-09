@@ -67,7 +67,7 @@ app.post('/logout', (req, res) => {
     res.status(301).redirect("https://tsjuusmei.github.io/fe-assessment-2/html-css-js/login.html");
 });
 
-app.post("/like", async (req, res) => {
+app.post("/like", (req, res) => {
     const id = req.body.id;
     console.log(id)
     // const likedUser = await db
