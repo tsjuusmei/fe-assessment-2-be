@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 
@@ -14,39 +14,39 @@ let userID = "5e6ba1bde4b2e66c746a4df7";
 
 const users = [
     {
-        id: "5e6a2a4f05bc310f94b75ba8", 
+        id: "5e6a2a4f05bc310f94b75ba8",
         name: "Sophie",
         age: 22,
         likedBy: ["5e6ba1bde4b2e66c746a4df7"],
         visitedBy: [""]
     },
     {
-        id: "5e6ba1bde4b2e66c746a4df7", 
-        name:"Guus",
+        id: "5e6ba1bde4b2e66c746a4df7",
+        name: "Guus",
         age: 21,
-        likedBy :["5e6a2a4f05bc310f94b75ba8","5e6ed3ed1c9d440000983905"],
-        visitedBy:["5e6a2a4f05bc310f94b75ba8", "5e6ed3ed1c9d440000983905", "5e6ed3d91c9d440000983904", "5e6ed43e1c9d440000983906"]
+        likedBy: ["5e6a2a4f05bc310f94b75ba8", "5e6ed3ed1c9d440000983905"],
+        visitedBy: ["5e6a2a4f05bc310f94b75ba8", "5e6ed3ed1c9d440000983905", "5e6ed3d91c9d440000983904", "5e6ed43e1c9d440000983906"]
     },
     {
-        id: "5e6ed3d91c9d440000983904", 
-        name:"Lindy",
+        id: "5e6ed3d91c9d440000983904",
+        name: "Lindy",
         age: 20,
-        likedBy :[""],
-        visitedBy:[""]
+        likedBy: [""],
+        visitedBy: [""]
     },
     {
-        id: "5e6ed3ed1c9d440000983905", 
-        name:"Layla",
+        id: "5e6ed3ed1c9d440000983905",
+        name: "Layla",
         age: 21,
-        likedBy :[""],
-        visitedBy:[""]
+        likedBy: [""],
+        visitedBy: [""]
     },
     {
-        id: "5e6ed43e1c9d440000983906", 
-        name:"Sara",
+        id: "5e6ed43e1c9d440000983906",
+        name: "Sara",
         age: 19,
-        likedBy :[""],
-        visitedBy:[""]
+        likedBy: [""],
+        visitedBy: [""]
     }
 ]
 
@@ -65,7 +65,32 @@ app.post('/login', (req, res) => {
 
 app.post('/logout', (req, res) => {
     res.status(301).redirect("https://tsjuusmei.github.io/fe-assessment-2/html-css-js/login.html");
-  });
+});
+
+app.post("/like", async (req, res) => {
+    const id = req.body.id;
+    console.log(id)
+    // const likedUser = await db
+    //     .collection("fakeUsers")
+    //     .findOne({ _id: ObjectID(id) });
+    // if (likedUser.likedBy.includes(req.session.user)) {
+    //     await db
+    //         .collection("fakeUsers")
+    //         .updateOne(
+    //             { _id: ObjectID(id) },
+    //             { $pull: { likedBy: req.session.user } }
+    //         );
+    //     res.sendStatus(201);
+    // } else {
+    //     await db
+    //         .collection("fakeUsers")
+    //         .updateOne(
+    //             { _id: ObjectID(id) },
+    //             { $push: { likedBy: req.session.user } }
+    //         );
+    //     res.sendStatus(200);
+    // }
+});
 
 app.listen(process.env.PORT || 3000)
 
