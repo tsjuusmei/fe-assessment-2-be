@@ -68,28 +68,20 @@ app.post('/logout', (req, res) => {
 });
 
 app.post("/like", (req, res) => {
+
     const id = req.body.id;
-    res.send(id)
-    // const likedUser = await db
-    //     .collection("fakeUsers")
-    //     .findOne({ _id: ObjectID(id) });
-    // if (likedUser.likedBy.includes(req.session.user)) {
-    //     await db
-    //         .collection("fakeUsers")
-    //         .updateOne(
-    //             { _id: ObjectID(id) },
-    //             { $pull: { likedBy: req.session.user } }
-    //         );
-    //     res.sendStatus(201);
-    // } else {
-    //     await db
-    //         .collection("fakeUsers")
-    //         .updateOne(
-    //             { _id: ObjectID(id) },
-    //             { $push: { likedBy: req.session.user } }
-    //         );
-    //     res.sendStatus(200);
-    // }
+
+    const likedUser = users.filter(data => { return data.id == id })[0];
+    const currentUser = users.filter(data => { return data.id == userID })[0];
+
+    if (likedUser.likedBy.includes(currentUser.id)) {
+        const index = likedUser.likedBy.indexOf(currentUser.id);
+        likedUser.splice(index, 1);
+        res.sendStatus(201);
+    } else {
+        await currentUser.push(currentUser.id)
+        res.sendStatus(200);
+    }
 });
 
 app.listen(process.env.PORT || 3000)
