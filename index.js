@@ -57,7 +57,7 @@ app.post('/login', (req, res) => {
     res.redirect('https://tsjuusmei.github.io/fe-assessment-2/html-css-js/profile.html')
 })
 
-router.post('/logout', (req, res) => {
+app.post('/logout', (req, res) => {
     console.log('logout');
     res.status(301).redirect("https://tsjuusmei.github.io/fe-assessment-2/html-css-js/login.html");
   });
