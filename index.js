@@ -54,6 +54,10 @@ app.get('/users', (req, res) => {
     res.json(users)
 })
 
+app.get('/currentUser', (req, res) => {
+    res.json(currentUser)
+})
+
 app.post('/login', (req, res) => {
     currentUser = req.body.user;
     res.redirect('https://tsjuusmei.github.io/fe-assessment-2/html-css-js/profile.html')
