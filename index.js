@@ -8,6 +8,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+let currentUser;
+
 const users = [
     {
         id: "5e6a2a4f05bc310f94b75ba8", 
@@ -48,6 +50,11 @@ const users = [
 
 app.get('/users', (req, res) => {
     res.json(users)
+})
+
+app.post('/login', (req, res) => {
+    currentUser = req.body.user;
+    res.redirect('https://tsjuusmei.github.io/fe-assessment-2/html-css-js/profile.html')
 })
 
 app.listen(process.env.PORT || 3000, () => console.log('server running'))
