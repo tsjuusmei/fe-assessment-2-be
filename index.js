@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors())
 
-let currentUser = "5e6ba1bde4b2e66c746a4df7";
+let userID = "5e6ba1bde4b2e66c746a4df7";
 
 const users = [
     {
@@ -55,11 +55,11 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/currentUser', (req, res) => {
-    res.json(currentUser)
+    res.json(userID)
 })
 
 app.post('/login', (req, res) => {
-    currentUser = req.body.user;
+    userID = req.body.user;
     res.redirect('https://tsjuusmei.github.io/fe-assessment-2/html-css-js/profile.html')
 })
 
