@@ -4,7 +4,7 @@
   "description": "heroku server",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
