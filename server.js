@@ -54,4 +54,4 @@ app.get('/users', (req, res) => {
     res.json(users)
 })
 
-module.exports(app)
+module.exports = app
