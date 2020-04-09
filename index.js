@@ -69,7 +69,7 @@ app.post('/logout', (req, res) => {
 
 app.post("/like", (req, res) => {
     const id = req.body.id;
-    console.log(id)
+    res.send(id)
     // const likedUser = await db
     //     .collection("fakeUsers")
     //     .findOne({ _id: ObjectID(id) });
