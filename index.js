@@ -63,4 +63,6 @@ app.post('/logout', (req, res) => {
     res.status(301).redirect("https://tsjuusmei.github.io/fe-assessment-2/html-css-js/login.html");
   });
 
+app.listen(process.env.PORT || 3000)
+
 module.exports = express.Router()
