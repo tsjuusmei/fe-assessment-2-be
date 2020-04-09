@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors())
 
-let currentUser;
+let currentUser = "5e6ba1bde4b2e66c746a4df7";
 
 const users = [
     {
