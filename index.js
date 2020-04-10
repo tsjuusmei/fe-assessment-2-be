@@ -71,11 +71,11 @@ app.post("/like", (req, res) => {
 
     const id = req.body.id;
 
-    const likedUser = users.filter(user => { return user.id == id })[0];
+    const likedUser = users.find(user => { return user.id == id });
 
     console.log(likedUser)
 
-    const currentUser = users.filter(data => { return data.id == userID })[0];
+    const currentUser = users.find(data => { return data.id == userID })[0];
 
     if (likedUser.likedBy.includes(currentUser.id)) {
         const index = likedUser.likedBy.indexOf(currentUser.id);
