@@ -36,7 +36,7 @@ const users = [
     }
 ]
 
-const id = 5e6a2a4f05bc310f94b75ba8;
+const id = "5e6a2a4f05bc310f94b75ba8";
 
 
-console.log(users.filter(data => { return data.id == id })[0])
+console.log(users.find(data => { return data.id == id }))
