@@ -31,22 +31,22 @@ const users = [
         id: "5e6ed3d91c9d440000983904",
         name: "Lindy",
         age: 20,
-        likedBy: [""],
-        visitedBy: [""]
+        likedBy: [],
+        visitedBy: []
     },
     {
         id: "5e6ed3ed1c9d440000983905",
         name: "Layla",
         age: 21,
-        likedBy: [""],
-        visitedBy: [""]
+        likedBy: [],
+        visitedBy: []
     },
     {
         id: "5e6ed43e1c9d440000983906",
         name: "Sara",
         age: 19,
-        likedBy: [""],
-        visitedBy: [""]
+        likedBy: [],
+        visitedBy: []
     }
 ]
 
