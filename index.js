@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors())
+app.use(cors());
 
 let userID = "5e6ba1bde4b2e66c746a4df7";
 
@@ -79,7 +79,7 @@ app.post("/like", (req, res) => {
         likedUser.splice(index, 1);
         res.sendStatus(201);
     } else {
-        await currentUser.push(currentUser.id)
+        currentUser.push(currentUser.id)
         res.sendStatus(200);
     }
 });
