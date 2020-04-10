@@ -71,7 +71,7 @@ app.post("/like", (req, res) => {
 
     const id = req.body.id;
 
-    const likedUser = users[0];
+    const likedUser = users.filter(user => { return user.id == id })[0];
 
     console.log(likedUser)
 
@@ -79,10 +79,10 @@ app.post("/like", (req, res) => {
 
     if (likedUser.likedBy.includes(currentUser.id)) {
         const index = likedUser.likedBy.indexOf(currentUser.id);
-        likedUser.splice(index, 1);
+        likedUser.likedBy.splice(index, 1);
         res.sendStatus(201);
     } else {
-        currentUser.push(currentUser.id)
+        likedUser.likedBy.push(currentUser.id)
         res.sendStatus(200);
     }
 });
