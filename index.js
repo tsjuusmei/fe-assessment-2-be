@@ -69,13 +69,9 @@ app.post('/logout', (req, res) => {
 
 app.post("/like", (req, res) => {
 
-    const id = req.body.id.toString();
+    const id = req.body.id;
 
-    console.log(id)
-
-    console.log(userID)
-
-    const likedUser = users.filter(data => { return data.id == id })[0];
+    const likedUser = users.filter(data => { return data.id == id.toString() })[0];
 
     console.log(likedUser)
 
