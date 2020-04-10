@@ -71,7 +71,7 @@ app.post("/like", (req, res) => {
 
     const id = req.body.id;
 
-    const likedUser = users.filter(data => { return data.id == id.toString() })[0];
+    const likedUser = users[0];
 
     console.log(likedUser)
 
