@@ -69,7 +69,7 @@ app.post('/logout', (req, res) => {
 
 app.post("/like", (req, res) => {
 
-    console.log(users.find(user => { return user.id == req.body.id }));
+    console.log(users.find(user => { return user.id == "5e6a2a4f05bc310f94b75ba8" }));
 
     console.log(req.body.id, userID)
 
