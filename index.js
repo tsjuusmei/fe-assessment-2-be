@@ -69,6 +69,8 @@ app.post('/logout', (req, res) => {
 
 app.post("/like", (req, res) => {
 
+    console.log(JSON.stringify(user.id), JSON.stringify(req.body.id))
+
     const likedUser = users.filter(user => { return JSON.stringify(user.id) == JSON.stringify(req.body.id) })[0];
 
     console.log(likedUser);
