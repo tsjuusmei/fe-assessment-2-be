@@ -18,7 +18,7 @@ const users = [
         name: "Sophie",
         age: 22,
         likedBy: ["5e6ba1bde4b2e66c746a4df7"],
-        visitedBy: [""]
+        visitedBy: []
     },
     {
         id: "5e6ba1bde4b2e66c746a4df7",
