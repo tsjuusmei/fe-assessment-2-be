@@ -73,7 +73,7 @@ app.post("/like", (req, res) => {
 
     console.log(id)
 
-    console.log(users)
+    console.log(userID)
 
     const likedUser = users.filter(data => { return data.id == id })[0];
 
