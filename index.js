@@ -67,22 +67,22 @@ app.post('/logout', (req, res) => {
     res.status(301).redirect("https://tsjuusmei.github.io/fe-assessment-2/html-css-js/login.html");
 });
 
-// app.post("/like", (req, res) => {
+app.post("/like", (req, res) => {
 
-//     const id = req.body.id;
+    const id = req.body.id;
 
-//     const likedUser = users.filter(data => { return data.id == id })[0];
-//     const currentUser = users.filter(data => { return data.id == userID })[0];
+    const likedUser = users.filter(data => { return data.id == id })[0];
+    const currentUser = users.filter(data => { return data.id == userID })[0];
 
-//     if (likedUser.likedBy.includes(currentUser.id)) {
-//         const index = likedUser.likedBy.indexOf(currentUser.id);
-//         likedUser.splice(index, 1);
-//         res.sendStatus(201);
-//     } else {
-//         await currentUser.push(currentUser.id)
-//         res.sendStatus(200);
-//     }
-// });
+    if (likedUser.likedBy.includes(currentUser.id)) {
+        const index = likedUser.likedBy.indexOf(currentUser.id);
+        likedUser.splice(index, 1);
+        res.sendStatus(201);
+    } else {
+        await currentUser.push(currentUser.id)
+        res.sendStatus(200);
+    }
+});
 
 app.listen(process.env.PORT || 3000)
 
