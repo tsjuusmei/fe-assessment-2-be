@@ -70,8 +70,8 @@ app.post('/logout', (req, res) => {
 app.post("/like", (req, res) => {
 
     users.forEach(user => {
-        console.log(user.id)
-        console.log(req.body.id)
+        console.log(JSON.stringify(user.id))
+        console.log(JSON.stringify(req.body.id))
         console.log( JSON.stringify(user.id) == JSON.stringify(req.body.id))
     });
 
