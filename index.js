@@ -69,7 +69,7 @@ app.post('/logout', (req, res) => {
 
 app.post("/like", (req, res) => {
 
-    const likedUser = users.find(user => { return user.id == JSON.stringify(req.body.id) });
+    const likedUser = users.find(user => { return JSON.stringify(user.id) == JSON.stringify(req.body.id) });
 
     console.log(likedUser);
 
