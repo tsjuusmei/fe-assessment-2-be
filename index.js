@@ -75,6 +75,8 @@ app.post("/like", (req, res) => {
 
     const likedUser = users.filter(data => { return data.id == id })[0];
 
+    console.log(likedUser)
+
     const currentUser = users.filter(data => { return data.id == userID })[0];
 
     if (likedUser.likedBy.includes(currentUser.id)) {
