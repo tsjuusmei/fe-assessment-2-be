@@ -69,13 +69,7 @@ app.post('/logout', (req, res) => {
 
 app.post("/like", (req, res) => {
 
-    users.forEach(user => {
-        console.log(JSON.stringify(user.id))
-        console.log(JSON.stringify(req.body.id))
-        console.log( JSON.stringify(user.id) == JSON.stringify(req.body.id))
-    });
-
-    console.log(likedUser);
+    const likedUser = users.filter(user => { return user.id == req.body.id })[0];
 
     const currentUser = users.filter(data => { return data.id == userID })[0];
 
