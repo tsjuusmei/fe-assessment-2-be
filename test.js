@@ -38,5 +38,10 @@ const users = [
 
 const id = "5e6a2a4f05bc310f94b75ba8";
 
+users.prototype.nameAge = function () {
+    return this.name + " " + this.age;
+};
+
+console.log(users.nameAge)
 
 console.log(users.find(data => { return data.id == id }))
